@@ -1,0 +1,45 @@
+﻿@model IEnumerable<waDay15XPos.MVC.Models.Jurusan>
+
+@{
+    ViewBag.Title = "TJurusan";
+}
+
+<h2>TJurusan</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kode_jurusan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nama_jurusan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status_jurusan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kode_jurusan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nama_jurusan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status_jurusan)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
